@@ -1,0 +1,2 @@
+module SubcontentsHelper
+end

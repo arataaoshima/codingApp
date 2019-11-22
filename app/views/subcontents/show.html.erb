@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subcontent.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @subcontent.subcontent_type %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @subcontent.article_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @subcontent.order %>
+</p>
+
+<%= link_to 'Edit', edit_subcontent_path(@subcontent) %> |
+<%= link_to 'Back', subcontents_path %>

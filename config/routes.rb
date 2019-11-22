@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subcontents
+  resources :articles
   root to: 'home#top'
   get 'home/about'
   get 'home/index'
