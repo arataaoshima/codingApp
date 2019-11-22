@@ -4,3 +4,5 @@ bootstrap installed
 
 heroku deployed
 https://coding-app-arata.herokuapp.com/
+
+photo_applod deployed

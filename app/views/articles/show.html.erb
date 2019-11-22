@@ -4,8 +4,8 @@
 <p>
   <h1><%= @article.title %></h1>
 </p>
+<%= image_tag @article.image.to_s %>
 </div>
-
 <p>
   <% @article.subcontents.each do |s| %>
     <h5><%= s.name %></h5>
