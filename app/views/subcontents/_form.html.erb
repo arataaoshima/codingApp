@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :subcontent_type %>
     <%= form.check_box :subcontent_type %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :article_id %>
     <%= form.number_field :article_id %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :order %>
     <%= form.number_field :order %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :content %>
     <%= form.rich_text_area :content %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class=> "btn btn-outline-secondary" %>
   </div>
 <% end %>

@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :summary %>
-    <%= form.text_area :summary %>
+    <%= form.text_area :summary, class:"form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :image %>
     <%= form.text_field :image %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-outline-secondary" %>
   </div>
 <% end %>

@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<div class="text-center">
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <h1><%= @article.title %></h1>
 </p>
+</div>
 
 <p>
-  <strong>Summary:</strong>
-  <%= @article.summary %>
-</p>
-<p>
-  <strong>Content:</strong>
   <% @article.subcontents.each do |s| %>
-  <%= s.name %>
+    <h5><%= s.name %></h5>
+    <hr color="#000000" width="100%">
+
+    <% if s.subcontent_type == true %>
+      <div class="shadow-none p-3 mb-5 bg-dark rounded text-light"><%= s.content %></div>
+    <% else %>
+      <div class="shadow-none p-3 mb-5 bg-light rounded"><%= s.content %></div>
+    <% end %>
   <% end %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @article.image %>
-</p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
