@@ -69,6 +69,6 @@ class SubcontentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subcontent_params
-      params.require(:subcontent).permit(:name, :subcontent_type, :article_id, :order)
+      params.require(:subcontent).permit(:name, :subcontent_type, :article_id, :order, :content)
     end
 end
