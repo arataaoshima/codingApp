@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 nav a:hover {
   background-color: white;
+}
+
+html, body{
+    margin-top: 50px;         /* 余白の削除 */
+    padding: 0;        /* 余白の削除 */
+    width:100%;
+    height:100%;
 }
