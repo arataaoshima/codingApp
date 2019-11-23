@@ -2,5 +2,21 @@
 
 <%= render 'form', article: @article %>
 
+<p>
+  <% @article.subcontents.order("sub_order").each do |s| %>
+    <h5><%= s.sub_order%>. <%= s.name %></h5>
+    <hr color="#000000" width="100%">
+
+    <% if s.subcontent_type == true %>
+      <div class="shadow-none p-3 mb-5 bg-dark rounded text-light"><%= s.content %></div>
+    <% else %>
+      <div class="shadow-none p-3 mb-5 bg-light rounded"><%= s.content %></div>
+    <% end %>
+    <div class="buttons">
+      <%= link_to "Edit", edit_subcontent_path(s), class:"btn btn-outline-secondary" %>
+      <%= link_to "Delete", subcontent_path(s),method: :delete, class:"btn btn-outline-danger" %>
+    </div>
+  <% end %>
+</p>
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>

@@ -10,23 +10,34 @@
       <li class="nav-item">
         <a class="nav-link" href="/home/about">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/subcontents">Subcontents</a>
-      </li>
+      <% if user_signed_in? && current_user.admin == true %>
+        <li class="nav-item">
+          <a class="nav-link" href="/subcontents">Subcontents</a>
+        </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="/articles">Articles</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to current_user.email, edit_user_registration_path(current_user), class:"dropdown-item" %>
+            <a class="dropdown-item" href="#">My List</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Signout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Signin", new_user_session_path, class:"nav-link" %>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Signin with Google', user_google_oauth2_omniauth_authorize_path, class:"nav-link"  %>
+      </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="/home/index" tabindex="-1" aria-disabled="true">Index</a>
       </li>

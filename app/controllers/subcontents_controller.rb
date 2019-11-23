@@ -28,7 +28,7 @@ class SubcontentsController < ApplicationController
 
     respond_to do |format|
       if @subcontent.save
-        format.html { redirect_to @subcontent, notice: 'Subcontent was successfully created.' }
+        format.html { redirect_to "/articles/#{@subcontent.article_id}/edit", notice: 'Subcontent was successfully created.' }
         format.json { render :show, status: :created, location: @subcontent }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SubcontentsController < ApplicationController
   def update
     respond_to do |format|
       if @subcontent.update(subcontent_params)
-        format.html { redirect_to @subcontent, notice: 'Subcontent was successfully updated.' }
+        format.html { redirect_to "/articles/#{@subcontent.article_id}/edit", notice: 'Subcontent was successfully updated.' }
         format.json { render :show, status: :ok, location: @subcontent }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class SubcontentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subcontent_params
-      params.require(:subcontent).permit(:name, :subcontent_type, :article_id, :order, :content)
+      params.require(:subcontent).permit(:name, :subcontent_type, :article_id, :sub_order, :content)
     end
 end
