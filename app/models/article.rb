@@ -1,6 +1,8 @@
 class Article < ApplicationRecord
 
   has_many :subcontents
+  has_many :article_categories
+  has_many :categories, through: :article_categories
   mount_uploader :image, ImageUploader
 
   def self.search(search) #self.でクラスメソッドとしている

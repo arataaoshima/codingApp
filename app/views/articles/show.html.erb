@@ -4,7 +4,10 @@
 <p>
   <h1><%= @article.title %></h1>
 </p>
-<%= image_tag @article.image.to_s %>
+<%= image_tag @article.image.to_s %></br>
+  <div class="category_links">
+    <% @article.categories.each do |c| %> <%= link_to c.category_name, category_path(c), class:"btn btn-outline-success" %> <% end %>
+  </div>
 </div>
 <p>
   <% @article.subcontents.each do |s| %>
