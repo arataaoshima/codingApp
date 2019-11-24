@@ -4,6 +4,17 @@
 <p>
   <h1><%= @article.title %></h1>
 </p>
+<% if Like.find_by(user_id: current_user.id, article_id: @article.id) %>
+<p>
+  <%= link_to "Already Liked!","/deletelist/#{@article.id}" ,method: :post, class:"btn btn-secondary text-light" %>
+</p>
+<% else %>
+<p>
+  <%= link_to "Add to Mylist","/addlist/#{@article.id}" ,method: :post, class:"btn btn-outline-primary" %>
+</p>
+<% end %>
+
+
 <%= image_tag @article.image.to_s %></br>
   <div class="category_links">
     <% @article.categories.each do |c| %> <%= link_to c.category_name, category_path(c), class:"btn btn-outline-success" %> <% end %>

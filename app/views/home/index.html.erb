@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
+<h1>Your Articles</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<% current_user.articles.each do |article| %>
+  <%= link_to article.title, article_path(article) %>
+<% end %>

@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   root to: 'home#top'
   get 'home/about'
   get 'home/index'
+  post '/addlist/:article_id' => "home#addlist"
+  post 'deletelist/:article_id' => "home#deletelist"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

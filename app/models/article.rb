@@ -3,6 +3,10 @@ class Article < ApplicationRecord
   has_many :subcontents
   has_many :article_categories
   has_many :categories, through: :article_categories
+
+  has_many :likes
+  has_many :users, through: :likes
+
   mount_uploader :image, ImageUploader
 
   def self.search(search) #self.でクラスメソッドとしている

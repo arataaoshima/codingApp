@@ -17,4 +17,7 @@ class User < ApplicationRecord
     end
       user
     end
+
+    has_many :likes
+    has_many :articles, through: :likes
 end
