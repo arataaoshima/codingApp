@@ -5,7 +5,9 @@
 <table class="table">
   <thead>
     <tr>
+      <% if user_signed_in? && current_user.admin == true %>
       <th>#</th>
+      <% end %>
       <th>Title</th>
       <th>Summary</th>
       <th colspan="3"></th>
@@ -15,7 +17,9 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <% if user_signed_in? && current_user.admin == true %>
         <td><%= article.id %></td>
+        <% end %>
         <td><%= article.title %></td>
         <td><%= article.summary %></td>
         <td><%= link_to 'Show', article, class:"btn btn-outline-success" %></td>

@@ -44,6 +44,13 @@
           <%= f.password_field :password_confirmation, class:"form-control"  %></div>
 
           <div class="form-group"><%= f.submit "Sign up" ,class:"btn btn-outline-primary" %></div>
+          <div class="form-group">
+          <a href="/users/auth/google_oauth2">
+          <p>Sign up with Google
+          <i class="fab fa-google"></i>
+          </p>
+          </a>
+          </div>
           <% end %>
       </div>
       <div class="modal-footer">
