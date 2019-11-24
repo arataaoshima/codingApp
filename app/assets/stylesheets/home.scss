@@ -13,3 +13,33 @@ html, body{
     width:100%;
     height:100%;
 }
+
+
+
+.home-img{
+  width:100%;
+}
+
+.home-top-wrapper {
+  padding-top:100px;
+  color:white;
+  background-image: url("/fixed/home-image.jpg");
+  height: 500px;
+  background-size:cover;
+}
+
+.application-layout-wrapper{
+  //background-color: #FFFDF4;
+}
+
+.login-wrapper{
+  //background-color: #FFFDF4;
+}
+.login-top-wrapper{
+  margin: auto;
+  width: 80%;
+}
+
+.login-buttons-wrapper{
+  margin-top:50px;
+}

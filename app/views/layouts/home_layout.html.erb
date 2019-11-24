@@ -13,13 +13,10 @@
   </head>
 
   <body>
-
-    <%= render 'layouts/header' %>
-    <div class="application-layout-wrapper">
-      <div class="container">
-        <%= yield %>
-        <%= render 'layouts/footer' %>
-      </div>
-    </div>
+  <div class="home-layout-wrapper">
+      <%= render 'layouts/header' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+  </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-
+  layout 'home_layout'
   before_action :admin_user, only: [:all_users, :edit_user, :update_user, :delete_user]
 
   def top
