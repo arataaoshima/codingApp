@@ -1,5 +1,26 @@
 class HomeController < ApplicationController
+
   def top
+  end
+
+  def all_users
+    @users = User.all
+  end
+
+  def edit_user
+    @user = User.find(params[:id])
+  end
+
+  def update_user
+    @user = User.find_by(id: params[:id])
+    @user.update(name: params[:name], email:params[:email], admin: params[:admin])
+    redirect_to all_users_path
+  end
+
+  def delete_user
+    @user = User.find_by(id:params[:id])
+    @user.destroy
+    redirect_to all_users_path
   end
 
   def about
@@ -21,4 +42,5 @@ class HomeController < ApplicationController
     @like.destroy
     redirect_to "/articles/#{@like.article_id}"
   end
+
 end
