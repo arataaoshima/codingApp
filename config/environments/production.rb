@@ -94,6 +94,18 @@ Rails.application.configure do
   # middleware. The `delay` is used to determine how long to wait after a write
   # to send a subsequent read to the primary.
   #
+  config.action_mailer.default_url_options = { :host => 'https://coding-app-arata.herokuapp.com/' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings =
+    {
+   user_name: ENV['SENDGRID_USERNAME'],
+   password: ENV['SENDGRID_PASSWORD'],
+   domain: "heroku.com",
+   address: "smtp.sendgrid.net",
+   port: 587,
+   authentication: :plain,
+   enable_starttls_auto: true
+  }
   # The `database_resolver` class is used by the middleware to determine which
   # database is appropriate to use based on the time delay.
   #

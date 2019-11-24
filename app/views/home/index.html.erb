@@ -1,6 +1,6 @@
-<h1>Your Articles</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
+<div class="text-center">
+  <h1>Your Articles</h1>
+</div>
 <% current_user.articles.each do |article| %>
-  <%= link_to article.title, article_path(article) %>
+  <%= link_to article.title, article_path(article), class:"btn btn-outline-success" %>
 <% end %>

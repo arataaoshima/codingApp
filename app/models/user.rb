@@ -20,4 +20,10 @@ class User < ApplicationRecord
 
     has_many :likes
     has_many :articles, through: :likes
+
+    after_create :send_welcome_mail
+    def send_welcome_mail
+    UserMailer.user_welcome_mail(self).deliver
+    end
+    
 end

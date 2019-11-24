@@ -8,7 +8,7 @@
 <p>
   <strong>Articles</strong>
   <% @category.articles.each do |a| %>
-    <%= link_to a.title, article_path(a) %>
+    <%= link_to a.title, article_path(a), class:"btn btn-outline-success" %>
   <% end %>
 </p>
 
