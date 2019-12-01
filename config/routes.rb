@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
-
+  resources :charges
   resources :subcontents
   resources :articles
   root to: 'home#top'
