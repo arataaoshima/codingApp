@@ -1,16 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="page-title text-center"
+  <p>
+    <h1><%= @category.category_name %></h1>
+  </p>
+</div>
 
-<p>
-  <strong>Category name:</strong>
-  <%= @category.category_name %>
-</p>
-
-<p>
-  <strong>Articles</strong>
-  <% @category.articles.each do |a| %>
-    <%= link_to a.title, article_path(a), class:"btn btn-outline-success" %>
-  <% end %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Articles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.articles.each do |a| %>
+    <tr>
+      <td><%= link_to a.title, article_path(a), class:"btn btn-outline-success" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

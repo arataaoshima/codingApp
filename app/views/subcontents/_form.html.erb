@@ -1,14 +1,18 @@
 <%= form_with(model: subcontent, local: true) do |form| %>
   <% if subcontent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(subcontent.errors.count, "error") %> prohibited this subcontent from being saved:</h2>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">close</span>
+    </button>
+      <p><%= pluralize(subcontent.errors.count, "error") %> prohibited this subcontent from being saved:</p>
 
       <ul>
         <% subcontent.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li><h5><%= message %></h5></li>
         <% end %>
       </ul>
-    </div>
+  </div>
   <% end %>
 
   <div class="field form-group">

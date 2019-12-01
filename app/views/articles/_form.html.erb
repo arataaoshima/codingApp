@@ -1,15 +1,18 @@
 <%= form_with(model: article, local: true) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% article.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <% if article.errors.any? %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">close</span>
+      </button>
+        <p><%= pluralize(article.errors.count, "error") %> prohibited this subcontent from being saved:</p>
+        <ul>
+          <% article.errors.full_messages.each do |message| %>
+            <li><h6><%= message %></h6></li>
+          <% end %>
+        </ul>
     </div>
-  <% end %>
+    <% end %>
 
   <div class="field form-group">
     <%= form.label :title %>

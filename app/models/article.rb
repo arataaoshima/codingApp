@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
 
+
+  validates :title, length: {minimum:1, maximum:20}
+  
   has_many :subcontents
   has_many :article_categories
   has_many :categories, through: :article_categories
