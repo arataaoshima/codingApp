@@ -28,6 +28,16 @@ html, body{
   background-size:cover;
 }
 
+@media (max-width: 1000px) {
+.home-top-wrapper {
+  padding-top:100px;
+  color:white;
+  background-image: url("/fixed/home-image.jpg");
+  height: 300px;
+  background-size:cover;
+
+}}
+
 .application-layout-wrapper{
   //background-color: #FFFDF4;
 }
