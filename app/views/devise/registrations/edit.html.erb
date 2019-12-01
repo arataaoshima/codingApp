@@ -42,6 +42,8 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
+<h3>Cancel Subscription</h3>
+<p><%= link_to "Unsubscribe", "/unsubscribe", data: { confirm: "Are you sure?" }, method: :post %></p>
 
 <h3>Cancel my account</h3>
 
