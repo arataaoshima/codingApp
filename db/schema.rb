@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_01_210721) do
+ActiveRecord::Schema.define(version: 2019_12_08_211259) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -64,11 +64,34 @@ ActiveRecord::Schema.define(version: 2019_12_01_210721) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "home_icons", force: :cascade do |t|
+    t.string "icon_name"
+    t.string "icon_iamge"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "level_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.text "content"
+    t.string "answer"
+    t.integer "level_id"
+    t.integer "order"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "answer_help"
   end
 
   create_table "subcontents", force: :cascade do |t|

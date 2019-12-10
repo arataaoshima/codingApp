@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icon_name: MyString
+  icon_iamge: MyString
+
+two:
+  icon_name: MyString
+  icon_iamge: MyString

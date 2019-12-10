@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Icon name:</strong>
+  <%= @home_icon.icon_name %>
+</p>
+
+<p>
+  <strong>Icon iamge:</strong>
+  <%= image_tag @home_icon.icon_iamge.to_s %>
+
+</p>
+
+<%= link_to 'Edit', edit_home_icon_path(@home_icon) %> |
+<%= link_to 'Back', home_icons_path %>

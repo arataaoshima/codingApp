@@ -5,16 +5,41 @@
 </div>
 
 <div class="jumbotron text-center top-middle-wrapper">
-  <h1 class="display-4">Welcome to Coding Tree!</h1>
+  <% if !user_signed_in? %>
+  <h1 class="display-4">Welcome to Code around the World!</h1>
   <p class="lead">You can have look up all the coding references.</p>
   <p class="lead">If you register as user, you can bookmark articles so that you can find them easily later</p>
   <hr class="my-4">
-  <% if !user_signed_in? %>
   <p>Please sign up for Free!</p>
   <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
     Signup
   </button>
-  <% end %>
+  <div class="row card-deck justify-content-md-center">
+       <div class="card show_hero col col-sm-4 mx-auto" >
+          <%= image_tag HomeIcon.first.icon_iamge.to_s, class:"card-img-top" %>
+           <div class="hero_content">
+              <a href="https://ruby-on-rails-development-memo.herokuapp.com/" target="_blank">
+                <%= HomeIcon.first.icon_name %></br>
+              Click Here!
+              </a>
+           </div>
+       </div>
+ </div>
+  <% else %>
+    <div class="row card-deck">
+      <% @home_icons.each do |home_icon| %>
+         <div class="card show_hero" >
+            <%= image_tag home_icon.icon_iamge.to_s, class:"card-img-top" %>
+             <div class="hero_content">
+                <a href="https://ruby-on-rails-development-memo.herokuapp.com/" target="_blank">
+                  <%= home_icon.icon_name %></br>
+                Click Here!
+                </a>
+             </div>
+         </div>
+       <% end %>
+   </div>
+ <% end %>
 </div>
 
 <!-- Modal -->
@@ -53,6 +78,7 @@
           </div>
           <% end %>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>

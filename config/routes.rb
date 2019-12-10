@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :home_icons
+  get 'test/:level_id/:quiz_order' => 'quizzes#test'
+  post 'check/:quiz_id' => "quizzes#check"
+  resources :levels
+  resources :quizzes
   resources :categories
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",

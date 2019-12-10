@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Home Icons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Icon name</th>
+      <th>Icon iamge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @home_icons.each do |home_icon| %>
+      <tr>
+        <td><%= home_icon.icon_name %></td>
+        <td><%= home_icon.icon_iamge %></td>
+        <td><%= link_to 'Show', home_icon %></td>
+        <td><%= link_to 'Edit', edit_home_icon_path(home_icon) %></td>
+        <td><%= link_to 'Destroy', home_icon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Home Icon', new_home_icon_path %>

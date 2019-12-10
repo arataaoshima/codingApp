@@ -24,21 +24,21 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
-        <td><%= user.created_at %></td>
+        <td><%= user.created_at.strftime('%y-%m-%d') %></td>
         <td><%= user.payment %></td>
         <td><%= user.stripe_id %></td>
         <td><%= user.subscription_id %></td>
 
         <td>
           <% if user.purchase_date != nil %>
-            <%= Time.at("#{user.purchase_date}".to_i).to_datetime %>
+            <%= Time.at("#{user.purchase_date}".to_i).to_datetime.strftime('%y-%m-%d') %>
           <% else %>
             N/A
           <% end %>
         </td>
 
         <td><% if user.cancel_date != nil %>
-              <%= Time.at("#{user.cancel_date}".to_i).to_datetime %>
+              <%= Time.at("#{user.cancel_date}".to_i).to_datetime.strftime('%y-%m-%d') %>
             <% else %>
               N/A
           <% end %>

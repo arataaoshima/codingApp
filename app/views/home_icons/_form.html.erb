@@ -1,0 +1,27 @@
+<%= form_with(model: home_icon, local: true) do |form| %>
+  <% if home_icon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(home_icon.errors.count, "error") %> prohibited this home_icon from being saved:</h2>
+
+      <ul>
+        <% home_icon.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :icon_name %>
+    <%= form.text_field :icon_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :icon_iamge %>
+    <%= form.file_field :icon_iamge %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
