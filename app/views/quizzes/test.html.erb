@@ -7,7 +7,7 @@
     <%= form_with(url:"/check/#{@quiz.id}", method: "post") do |form| %>
     <div class="container">
       <div class="row justify-content-center">
-        <%= form.text_field :answer, class:"form-control col-6 col-md-4" %>
+        <%= form.text_field :answer, :maxlength => @quiz.answer.length, class:"form-control col-6 col-md-4" %>
         <div class="col-3"><%= @quiz.answer_help %></div>
       </div>
     </div>
@@ -17,5 +17,3 @@
     </div>
     <% end %>
   </div>
-
-  

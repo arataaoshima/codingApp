@@ -14,8 +14,8 @@
   <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
     Signup
   </button>
-  <div class="row card-deck justify-content-md-center">
-       <div class="card show_hero col col-sm-4 mx-auto" >
+  <div class="row card-deck">
+       <div class="show_hero col col-sm-4 mx-auto" >
           <%= image_tag HomeIcon.first.icon_iamge.to_s, class:"card-img-top" %>
            <div class="hero_content">
               <a href="/test/1/1">
@@ -28,7 +28,7 @@
   <% else %>
     <div class="row card-deck">
       <% @home_icons.each do |home_icon| %>
-         <div class="card show_hero" >
+         <div class="show_hero col col-sm-4" >
             <%= image_tag home_icon.icon_iamge.to_s, class:"card-img-top" %>
              <div class="hero_content">
                 <a href="<%= "/test/#{home_icon.level_id}/1" %>">
