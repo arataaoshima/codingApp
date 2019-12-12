@@ -59,6 +59,18 @@ html, body{
   content: "f1a0";
 }
 
+.test-submit-button{
+  width:40%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.test-middle-wrapper {
+  margin-top:50px;
+  padding-bottom:320px;
+}
+
+
 @media (max-width: 1000px) {
 .home-top-wrapper {
   padding-top:100px;

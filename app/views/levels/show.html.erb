@@ -4,6 +4,11 @@
   <strong>Level name:</strong>
   <%= @level.level_name %>
 </p>
+<p>
+  <strong>Go to Quiz!</strong>
+  <%= link_to "Start!", "/test/#{@level.id}/1" %>
+</p>
+
 
 <%= link_to 'Edit', edit_level_path(@level) %> |
 <%= link_to 'Back', levels_path %>

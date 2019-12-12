@@ -18,7 +18,7 @@
        <div class="card show_hero col col-sm-4 mx-auto" >
           <%= image_tag HomeIcon.first.icon_iamge.to_s, class:"card-img-top" %>
            <div class="hero_content">
-              <a href="https://ruby-on-rails-development-memo.herokuapp.com/" target="_blank">
+              <a href="/test/1/1">
                 <%= HomeIcon.first.icon_name %></br>
               Click Here!
               </a>
@@ -31,7 +31,7 @@
          <div class="card show_hero" >
             <%= image_tag home_icon.icon_iamge.to_s, class:"card-img-top" %>
              <div class="hero_content">
-                <a href="https://ruby-on-rails-development-memo.herokuapp.com/" target="_blank">
+                <a href="<%= "/test/#{home_icon.level_id}/1" %>">
                   <%= home_icon.icon_name %></br>
                 Click Here!
                 </a>

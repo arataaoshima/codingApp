@@ -69,6 +69,6 @@ class HomeIconsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_icon_params
-      params.require(:home_icon).permit(:icon_name, :icon_iamge)
+      params.require(:home_icon).permit(:icon_name, :icon_iamge, :level_id)
     end
 end

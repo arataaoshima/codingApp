@@ -72,9 +72,18 @@ class QuizzesController < ApplicationController
      next_quiz_id = @quiz.order + 1
 
     if @quiz.answer == params[:answer]
-      redirect_to "/test/#{@quiz.level_id}/#{next_quiz_id}"
+
+
+      if Quiz.find_by(level_id: @quiz.level_id, order: next_quiz_id) == nil
+        flash[:notice] = "You have completed this course!"
+        redirect_to root_path
+      else
+        flash[:notice] = "Great!"
+        redirect_to "/test/#{@quiz.level_id}/#{next_quiz_id}"
+      end
+
     else
-      redirect_to root_path
+      flash[:alert] = "Wrong Answer!"
       redirect_to "/test/#{@quiz.level_id}/#{@quiz.order}"
     end
 
