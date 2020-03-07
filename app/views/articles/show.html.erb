@@ -20,8 +20,29 @@
   </div>
 </div>
 <p>
-  <% @article.subcontents.each do |s| %>
-    <h5><%= s.name %></h5>
+  <% @article.subcontents.order("sub_order").each do |s| %>
+    <h5><%= s.name %>
+      <% if s.tips %>
+        <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+          Tips
+        </button>
+      <% end %>
+    </h5>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-body">
+           <%= s.tips %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <hr color="#000000" width="100%">
 
     <% if s.subcontent_type == true %>

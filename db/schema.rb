@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_011825) do
+ActiveRecord::Schema.define(version: 2019_12_16_005757) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_011825) do
     t.integer "sub_order"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "tips"
   end
 
   create_table "users", force: :cascade do |t|

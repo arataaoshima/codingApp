@@ -40,6 +40,12 @@
     <%= form.rich_text_area :content %>
   </div>
 
+  <div class="field form-group">
+    <%= form.label :tips %>
+    <%= form.text_field :tips, class:"form-control" %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit :class=> "btn btn-outline-secondary" %>
   </div>
