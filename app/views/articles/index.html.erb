@@ -1,35 +1,56 @@
 <div class="text-center page-title">
-  <h1>Articles</h1>
+  <h1>Articles & Categories</h1>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <% if user_signed_in? && current_user.admin == true %>
-      <th>#</th>
-      <% end %>
-      <th>Title</th>
-      <th>Summary</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @articles.each do |article| %>
+<div class="row">
+    <div class="article-table col-8">
+  <table class="table">
+    <thead>
       <tr>
         <% if user_signed_in? && current_user.admin == true %>
-        <td><%= article.id %></td>
+        <th>#</th>
         <% end %>
-        <td><%= article.title %></td>
-        <td><%= article.summary %></td>
-        <td><%= link_to 'Show', article, class:"btn btn-outline-success" %></td>
-        <% if user_signed_in? && current_user.admin == true %>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <th class="article-title-head"><h3>All Articles</h3></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <% if user_signed_in? && current_user.admin == true %>
+          <td><%= article.id %></td>
+          <% end %>
+          <td><div class="articles-index-title-wrapper"><%= link_to article.title, article, class:"article-title" %></div></br>
+          <div class="summary"><%= article.summary %></div></td>
+          <% if user_signed_in? && current_user.admin == true %>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+
+<div class="category-table col-4 table-light">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h4>Categories</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= link_to category.category_name, category, class:"btn btn-outline-success" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+</div>
 
 <br>
 <% if user_signed_in? && current_user.admin == true %>
