@@ -4,13 +4,16 @@
     </div>
 </div>
 
-<div class="jumbotron text-center top-middle-wrapper">
+<div class="text-center top-middle-wrapper">
+
   <% if !user_signed_in? %>
-  <h1 class="display-4">Welcome to Code around the World!</h1>
-  <p class="lead">You can have look up all the coding references.</p>
-  <p class="lead">If you register as user, you can bookmark articles so that you can find them easily later</p>
+  <div class="intro-title"><h1 class="display-4">Code Around the Worldへようこそ！</h1></div>
+  <p class="lead">このサイトは、初心者がウェブ開発を学ぶためのオンラインスクールです。</p>
+  <p class="lead">知識０から実際のウェブアプリを作れるようになれます。</p>
+  <p class="lead">プログラミングは全世界共通の言語です</p>
+  <p class="lead">プログラミングを学び、世界への扉を開きましょう！</p>
   <hr class="my-4">
-  <p>Please sign up for Free!</p>
+  <h4 class="regis-line">無料会員登録はこちら</h4>
   <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
     Signup
   </button>
@@ -84,4 +87,5 @@
       </div>
     </div>
   </div>
+
 </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand na" href="/">ウェブ開発メモ</a>
+  <a class="navbar-brand na" href="/">Code Around the World</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
         </li>
       <% end %>
       <li class="nav-item">
-        <a class="nav-link" href="/articles">Articles & Categories</a>
+        <a class="nav-link" href="/articles">開発記事</a>
       </li>
 
       <% if user_signed_in? %>
@@ -52,7 +52,7 @@
     <div class="form-inline my-2 my-lg-0">
     <%= form_tag articles_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
       <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2" %>
-      <%= submit_tag "Article Search", class:"btn btn-outline-success my-2 my-sm-0" %>
+      <%= submit_tag "記事検索", class:"btn btn-outline-success my-2 my-sm-0" %>
     <% end %>
     </div>
   </div>
