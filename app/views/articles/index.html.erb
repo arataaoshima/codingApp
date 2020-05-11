@@ -43,7 +43,7 @@
     <tbody>
       <% @categories.each do |category| %>
         <tr>
-          <td><%= link_to category.category_name, category, class:"btn btn-outline-success" %></td>
+          <td><%= link_to category.category_name, category, class:"btn btn-outline-success category-btn" %></td>
         </tr>
       <% end %>
     </tbody>

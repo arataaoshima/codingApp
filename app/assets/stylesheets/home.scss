@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 nav {
-  border-bottom: 1px solid grey;
+  //border-bottom: 1px solid grey;
 }
 nav a:hover {
-  background-color: white;
+  color:blue;
+  background-color: rgba(1, 1, 1, 0);
 }
 
 html, body{
@@ -29,7 +30,7 @@ html, body{
   padding-top:100px;
   color:white;
   background-image: url("/fixed/home-image.jpg");
-  height: 500px;
+  height: 600px;
   background-size:cover;
 }
 
